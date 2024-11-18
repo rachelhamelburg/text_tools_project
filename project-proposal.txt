@@ -1,0 +1,17 @@
+﻿APLN 553 Project Proposal
+
+
+1. Project Topic: Classification of health diagnoses based on student mental health
+2. Project Goal  (what you are planning to do, based on what idea): fine-tune a bert-suite model for classification of mental health diagnoses based on patient comments. 
+3. An example of data: https://www.kaggle.com/datasets/suchintikasarkar/sentiment-analysis-for-mental-health  . This dataset comes from a combination of mental health datasets (conversations, reddit posts, tweets, student testimonies).
+4. Relevant existing research (if any):[a][b]
+* Helpful papers, which both give us a sense of which model is the best for mental health classification, and the common challenges we might anticipate. 
+   * Automatic Detection and Classification of Mental Illnesses from General Social Media Texts - ACL Anthology
+   * OPI@LT-EDI-ACL2022: Detecting Signs of Depression from Social Media Text using RoBERTa Pre-trained Language Models - ACL Anthology
+5. In what way do you think to apply text analysis tools (Linux) for your project:
+We anticipate using linux for preprocessing of the individual data points for data cleaning, such as removal of whitespace, any non-alphanumeric characters, as well as punctuation (while preserving words such as don’t, it’s, etc.). We also plan to use linux to calculate type/token ratios for each mental health class. 
+A particular challenge we anticipate is addressing the fact that mental health diagnoses can overlap. How do we really determine that anxiety and stress don’t go hand-in-hand in some cases?  Maybe we can use linux to analyze the types of words that often fall under each tag (anxiety, stress, depression, etc) and look to see if there are such overlaps. Maybe that will help us understand where the model will struggle and/or give us incentive to use multi-labeling (one example can be labeled with two labels - stress, & anxiety).  That would entail finding the examples with the most overlap in certain words / word classes / whatever metric we choose, and double labeling them. 
+
+
+[a]https://colab.research.google.com/github/NielsRogge/Transformers-Tutorials/blob/master/BERT/Fine_tuning_BERT_(and_friends)_for_multi_label_text_classification.ipynb
+[b](we dont have to share this with the class… but lowkey this is a fantastic notebook we can pull from if we want to do multi-label text classification)
